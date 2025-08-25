@@ -1,22 +1,20 @@
 import type { Metadata } from 'next'
+import { MainNav } from '@/components/main-nav'
 
 export const metadata: Metadata = {
-  title: 'crateDigger',
-  description: 'keep a list of records you own',
+  title: 'Tracks',
+  description: 'All your tracks here',
 }
 
-export default function RootLayout({
+export default function TracksLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <main className="flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto">
-          {children}
-        </main>
-      </body>
-    </html>
+    <main>
+      <MainNav />
+      {children}
+    </main>
   )
 }
