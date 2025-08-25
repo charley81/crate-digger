@@ -1,5 +1,6 @@
 import './globals.css'
 
+import { ThemeProvider } from '@/components/theme/theme-provider'
 import type { Metadata } from 'next'
 import { Source_Code_Pro } from 'next/font/google'
 
@@ -20,13 +21,20 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${sourceCodePro.variable} ${sourceCodePro.variable}flex h-screen flex-col overflow-hidden antialiased`}
       >
-        <main className="flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto">
-          {children}
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )
