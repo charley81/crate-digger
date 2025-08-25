@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+
 import { MainNav } from '@/components/main-nav'
 
 export const metadata: Metadata = {

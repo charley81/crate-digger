@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import { Logo } from './logo'
-import { Button } from './ui/button'
+
 import { tracksPath } from '@/paths'
+
+import { Logo } from './logo'
 import { ModeToggle } from './theme/mode-toggle'
+import { Button } from './ui/button'
 
 export function MainNav() {
   return (

@@ -1,8 +1,9 @@
 import './globals.css'
 
-import { ThemeProvider } from '@/components/theme/theme-provider'
 import type { Metadata } from 'next'
 import { Source_Code_Pro } from 'next/font/google'
+
+import { ThemeProvider } from '@/components/theme/theme-provider'
 
 const sourceCodePro = Source_Code_Pro({
   variable: '--font-source-code-pro',

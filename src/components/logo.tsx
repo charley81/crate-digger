@@ -1,5 +1,7 @@
-import { indexPath } from '@/paths'
 import Link from 'next/link'
+
+import { indexPath } from '@/paths'
+
 import { Button } from './ui/button'
 
 type LogoProps = {
