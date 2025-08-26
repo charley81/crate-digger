@@ -8,7 +8,7 @@ import { Button } from './ui/button'
 
 export function MainNav() {
   return (
-    <nav className="bg-background fixed top-0 right-0 left-0 z-20 flex w-full justify-between p-6">
+    <nav className="bg-background mx-auto flex w-full max-w-[1100px] justify-between p-6">
       <Logo />
 
       <div className="flex items-center gap-x-4">
