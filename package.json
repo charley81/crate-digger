@@ -9,7 +9,7 @@
     "lint": "eslint",
     "lint-fix": "next lint --fix",
     "prisma-seed": "tsx prisma/seed.ts",
-    "postinstall": "prisma generate --no-engine",
+    "postinstall": "prisma generate",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
