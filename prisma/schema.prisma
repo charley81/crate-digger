@@ -16,11 +16,12 @@ datasource db {
 }
 
 model Track {
-  id          String @id @default(cuid())
+  id          String  @id @default(cuid())
   title       String
   album       String
   releaseDate String
   label       String
   genre       String
   producer    String
+  description String?
 }
