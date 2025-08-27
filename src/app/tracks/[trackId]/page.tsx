@@ -1,5 +1,7 @@
-import { TrackItem } from '@/features/tracks/components/track-item'
-import { getTrack } from '@/features/tracks/queries/get-track'
+import { Suspense } from 'react'
+
+import { TrackDetails } from '@/features/tracks/components/track-details'
+import { TrackDetailsSkeleton } from '@/features/tracks/components/track-details-skeleton'
 
 type TrackPageProps = {
   params: Promise<{ trackId: string }>
@@ -7,10 +9,11 @@ type TrackPageProps = {
 
 export default async function TrackPage({ params }: TrackPageProps) {
   const { trackId } = await params
-  const track = await getTrack(trackId)
   return (
-    <div className="mx-auto mt-8 w-full max-w-[768px] p-6">
-      <TrackItem track={track} isDetail />
-    </div>
+    <Suspense fallback={<TrackDetailsSkeleton />}>
+      <div className="mx-auto mt-8 w-full max-w-[768px] p-6">
+        <TrackDetails trackId={trackId} />
+      </div>
+    </Suspense>
   )
 }
