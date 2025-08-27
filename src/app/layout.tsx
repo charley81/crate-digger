@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Source_Code_Pro } from 'next/font/google'
 
+import { MainNav } from '@/components/main-nav'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 
 const sourceCodePro = Source_Code_Pro({
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sourceCodePro.variable} ${sourceCodePro.variable}flex h-screen flex-col overflow-hidden antialiased`}
+        className={`${sourceCodePro.variable} flex h-screen flex-col antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -32,7 +33,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto">
+          <MainNav />
+          <main className="flex flex-1 flex-col overflow-y-auto">
             {children}
           </main>
         </ThemeProvider>
