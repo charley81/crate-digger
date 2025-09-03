@@ -7,6 +7,7 @@ export default function CreateTrackPage() {
       title="Add track..."
       description="add tracks here"
       content={<TrackUpsertForm />}
+      className="w-full max-w-[768px] self-center"
     />
   )
 }

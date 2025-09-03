@@ -23,13 +23,15 @@ export function CardCompact({
   footer,
 }: CardCompactProps) {
   return (
-    <Card className={className}>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent>{content}</CardContent>
-      {footer && <CardFooter>{footer}</CardFooter>}
-    </Card>
+    <div className="flex min-h-full items-center justify-center p-4">
+      <Card className={className}>
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </CardHeader>
+        <CardContent>{content}</CardContent>
+        {footer && <CardFooter>{footer}</CardFooter>}
+      </Card>
+    </div>
   )
 }
