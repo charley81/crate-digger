@@ -13,7 +13,7 @@ export function MainNav() {
 
       <div className="flex items-center gap-x-4">
         <ModeToggle />
-        <Button asChild className="font-bold">
+        <Button asChild className="font-bold" variant="secondary">
           <Link href={tracksPath()}>Tracks</Link>
         </Button>
       </div>

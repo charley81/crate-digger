@@ -21,7 +21,6 @@ export function TrackDetailsSkeleton() {
           <Skeleton className="h-4 w-full" />
         </div>
       </div>
-      ``{' '}
     </div>
   )
 }
