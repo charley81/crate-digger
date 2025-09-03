@@ -1,7 +1,7 @@
+import { LucideArrowBigLeft, LucidePencil, LucideTrash } from 'lucide-react'
 import Link from 'next/link'
-import { LucideTrash, LucideArrowBigLeft, LucidePencil } from 'lucide-react'
-import { deleteTrack } from '../actions/delete-track'
 
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardAction,
@@ -11,8 +11,9 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Track } from '@/generated/prisma'
-import { trackPath, tracksPath, updateTrack } from '@/paths'
-import { Button } from '@/components/ui/button'
+import { trackPath, tracksPath, updatePath } from '@/paths'
+
+import { deleteTrack } from '../actions/delete-track'
 
 type TrackItemProps = {
   track: Track
@@ -43,7 +44,7 @@ export function TrackItem({ track, isDetail }: TrackItemProps) {
 
   const editButton = (
     <Button asChild variant="outline" size="icon">
-      <Link href={updateTrack(track.id)}>
+      <Link href={updatePath(track.id)}>
         <LucidePencil />
       </Link>
     </Button>
@@ -67,9 +68,6 @@ export function TrackItem({ track, isDetail }: TrackItemProps) {
               </CardDescription>
               <CardTitle className="font-bold">{track.label}</CardTitle>
             </div>
-            {track.description && (
-              <CardDescription>{track.description}</CardDescription>
-            )}
           </CardContent>
         )}
       </Card>

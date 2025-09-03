@@ -1,9 +1,10 @@
 'use server'
 
-import prisma from '@/lib/prisma'
-import { tracksPath } from '@/paths'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+
+import prisma from '@/lib/prisma'
+import { tracksPath } from '@/paths'
 
 export async function upsertTrack(id: string | undefined, formData: FormData) {
   const data = {
@@ -25,8 +26,5 @@ export async function upsertTrack(id: string | undefined, formData: FormData) {
   })
 
   revalidatePath(tracksPath())
-
-  if (id) {
-    redirect(tracksPath())
-  }
+  redirect(tracksPath())
 }

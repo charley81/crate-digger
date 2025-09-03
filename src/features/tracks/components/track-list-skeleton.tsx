@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 export function TrackListSkeleton() {
   return (
-    <div className="mt-20 flex flex-col gap-y-4">
+    <div className="flex flex-col gap-y-4">
       {Array.from({ length: 3 }).map((_, i) => (
         <div key={i} className="rounded-lg border">
           <div className="flex items-center justify-between p-6">

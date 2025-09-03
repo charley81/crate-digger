@@ -10,8 +10,6 @@ const tracks = [
     label: 'Metalheadz',
     genre: 'Drum and Bass',
     producer: 'Roni Size',
-    description:
-      'A groundbreaking drum and bass classic from Roni Size & Reprazent. Features complex breakbeats and a memorable bassline. Won the Mercury Prize in 1997.',
   },
   {
     title: 'Tarantula',
@@ -20,8 +18,6 @@ const tracks = [
     label: 'Breakbeat Kaos',
     genre: 'Drum and Bass',
     producer: 'Pendulum',
-    description:
-      'An explosive track blending drum and bass with rock elements. Known for its aggressive energy and powerful drops. Helped define the mid-2000s dnb sound.',
   },
   {
     title: 'Turbulence',
@@ -30,8 +26,6 @@ const tracks = [
     label: 'RAM Records',
     genre: 'Drum and Bass',
     producer: 'Loadstar',
-    description:
-      "A modern drum and bass anthem with heavy basslines and crisp production. Showcases Loadstar's signature powerful sound design. Remains a dancefloor favorite.",
   },
 ]
 
