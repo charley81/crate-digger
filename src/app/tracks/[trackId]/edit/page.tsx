@@ -1,7 +1,8 @@
+import { notFound } from 'next/navigation'
+
 import { CardCompact } from '@/components/card-compact'
 import { TrackUpsertForm } from '@/features/tracks/components/track-upsert-form'
 import { getTrack } from '@/features/tracks/queries/get-track'
-import { notFound } from 'next/navigation'
 
 type TrackEditPageProps = {
   params: Promise<{ trackId: string }>
