@@ -14,7 +14,6 @@ export async function upsertTrack(id: string | undefined, formData: FormData) {
     label: formData.get('label') as string,
     genre: formData.get('genre') as string,
     producer: formData.get('producer') as string,
-    description: formData.get('description') as string,
   }
 
   await prisma.track.upsert({

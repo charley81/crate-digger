@@ -13,9 +13,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
   return (
     <form
       action={upsertTrack.bind(null, track?.id)}
-      className="flex flex-col gap-y-6"
+      className="flex flex-col gap-y-8"
     >
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="title">Title</Label>
         <Input
           type="text"
@@ -26,7 +26,7 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="album">Album</Label>
         <Input
           type="text"
@@ -37,7 +37,7 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="releaseDate">Release Date</Label>
         <Input
           type="text"
@@ -48,7 +48,7 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="label">Label</Label>
         <Input
           type="text"
@@ -59,7 +59,7 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="genre">Genre</Label>
         <Input
           type="text"
@@ -70,7 +70,7 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-1">
         <Label htmlFor="producer">Producer</Label>
         <Input
           type="text"
@@ -81,7 +81,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           required
         />
       </div>
-      <Button type="submit">Submit</Button>
+      <Button type="submit" className="hover:cursor-pointer">
+        Submit
+      </Button>
     </form>
   )
 }
