@@ -1,0 +1,30 @@
+import React from 'react'
+import { toast } from 'sonner'
+
+import { useActionFeedback } from './hooks/use-action-feedback'
+import { ActionState } from './utils/to-action-state'
+
+type FormProps = {
+  action: (payload: FormData) => void
+  actionState: ActionState
+  children: React.ReactNode
+}
+
+export default function Form({ action, actionState, children }: FormProps) {
+  useActionFeedback({
+    actionState,
+    options: {
+      onSuccess: ({ actionState }) => {
+        toast.success(actionState?.message)
+      },
+      onError: ({ actionState }) => {
+        toast.error(actionState?.message)
+      },
+    },
+  })
+  return (
+    <form action={action} className="flex flex-col gap-y-8">
+      {children}
+    </form>
+  )
+}

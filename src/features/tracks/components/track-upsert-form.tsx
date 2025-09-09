@@ -1,3 +1,10 @@
+'use client'
+
+import { useActionState } from 'react'
+
+import { FieldError } from '@/components/form/field-error'
+import Form from '@/components/form/form'
+import { EMPTY_ACTION_STATE } from '@/components/form/utils/to-action-state'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -10,11 +17,15 @@ type TrackUpsertFormProps = {
 }
 
 export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
+  const [actionState, action] = useActionState(
+    upsertTrack.bind(null, track?.id),
+    EMPTY_ACTION_STATE,
+  )
+
+  console.log(actionState)
+
   return (
-    <form
-      action={upsertTrack.bind(null, track?.id)}
-      className="flex flex-col gap-y-8"
-    >
+    <Form action={action} actionState={actionState}>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="title">Title</Label>
         <Input
@@ -23,8 +34,8 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="add title..."
           name="title"
           defaultValue={track?.title}
-          required
         />
+        <FieldError actionState={actionState} name="title" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="album">Album</Label>
@@ -34,8 +45,8 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="add album..."
           name="album"
           defaultValue={track?.album}
-          required
         />
+        <FieldError actionState={actionState} name="album" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="releaseDate">Release Date</Label>
@@ -45,8 +56,8 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="release date..."
           name="releaseDate"
           defaultValue={track?.releaseDate}
-          required
         />
+        <FieldError actionState={actionState} name="releaseDate" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="label">Label</Label>
@@ -56,8 +67,8 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="add label..."
           name="label"
           defaultValue={track?.label}
-          required
         />
+        <FieldError actionState={actionState} name="label" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="genre">Genre</Label>
@@ -67,8 +78,8 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="add genre..."
           name="genre"
           defaultValue={track?.genre}
-          required
         />
+        <FieldError actionState={actionState} name="genre" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label htmlFor="producer">Producer</Label>
@@ -78,12 +89,12 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           placeholder="add producer..."
           name="producer"
           defaultValue={track?.producer}
-          required
         />
+        <FieldError actionState={actionState} name="producer" />
       </div>
       <Button type="submit" className="hover:cursor-pointer">
         Submit
       </Button>
-    </form>
+    </Form>
   )
 }
