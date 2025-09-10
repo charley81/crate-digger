@@ -31,7 +31,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="title"
           placeholder="add title..."
           name="title"
-          defaultValue={track?.title}
+          defaultValue={
+            (actionState.payload?.get('title') as string) ?? track?.title
+          }
         />
         <FieldError actionState={actionState} name="title" />
       </div>
@@ -42,7 +44,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="album"
           placeholder="add album..."
           name="album"
-          defaultValue={track?.album}
+          defaultValue={
+            (actionState.payload?.get('album') as string) ?? track?.album
+          }
         />
         <FieldError actionState={actionState} name="album" />
       </div>
@@ -53,7 +57,10 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="releaseDate"
           placeholder="release date..."
           name="releaseDate"
-          defaultValue={track?.releaseDate}
+          defaultValue={
+            (actionState.payload?.get('releaseDate') as string) ??
+            track?.releaseDate
+          }
         />
         <FieldError actionState={actionState} name="releaseDate" />
       </div>
@@ -64,7 +71,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="label"
           placeholder="add label..."
           name="label"
-          defaultValue={track?.label}
+          defaultValue={
+            (actionState.payload?.get('label') as string) ?? track?.label
+          }
         />
         <FieldError actionState={actionState} name="label" />
       </div>
@@ -75,7 +84,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="genre"
           placeholder="add genre..."
           name="genre"
-          defaultValue={track?.genre}
+          defaultValue={
+            (actionState.payload?.get('genre') as string) ?? track?.genre
+          }
         />
         <FieldError actionState={actionState} name="genre" />
       </div>
@@ -86,7 +97,9 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
           id="producer"
           placeholder="add producer..."
           name="producer"
-          defaultValue={track?.producer}
+          defaultValue={
+            (actionState.payload?.get('producer') as string) ?? track?.producer
+          }
         />
         <FieldError actionState={actionState} name="producer" />
       </div>
