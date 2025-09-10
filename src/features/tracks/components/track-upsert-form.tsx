@@ -22,8 +22,6 @@ export function TrackUpsertForm({ track }: TrackUpsertFormProps) {
     EMPTY_ACTION_STATE,
   )
 
-  console.log(actionState)
-
   return (
     <Form action={action} actionState={actionState}>
       <div className="flex flex-col gap-y-1">

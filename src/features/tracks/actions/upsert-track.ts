@@ -4,10 +4,10 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import z from 'zod'
 
+import { setCookieByKey } from '@/actions/cookies'
 import {
   ActionState,
   fromErrorToActionState,
-  toActionState,
 } from '@/components/form/utils/to-action-state'
 import prisma from '@/lib/prisma'
 import { tracksPath } from '@/paths'
@@ -49,11 +49,12 @@ export async function upsertTrack(
     return fromErrorToActionState(error, formData)
   }
 
-  revalidatePath(tracksPath())
-
   if (id) {
-    redirect(tracksPath())
+    await setCookieByKey('toast', 'Track updated')
+  } else {
+    await setCookieByKey('toast', 'Track created')
   }
 
-  return toActionState('SUCCESS', 'track created...')
+  revalidatePath(tracksPath())
+  redirect(tracksPath())
 }
