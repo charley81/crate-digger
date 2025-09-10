@@ -2,8 +2,10 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Source_Code_Pro } from 'next/font/google'
+import { Toaster } from 'sonner'
 
 import { MainNav } from '@/components/main-nav'
+import { RedirecToast } from '@/components/redirect-toast'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 
 const sourceCodePro = Source_Code_Pro({
@@ -37,6 +39,8 @@ export default function RootLayout({
           <main className="flex flex-1 flex-col overflow-y-auto">
             {children}
           </main>
+          <Toaster expand />
+          <RedirecToast />
         </ThemeProvider>
       </body>
     </html>
